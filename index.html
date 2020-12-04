@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Key Hunt</title>
+
+		<script type="text/javascript" src="src/js/jquery.min.js"></script>
+
+		<script type="text/javascript" src="src/js/jquery.hammer.min.js"></script>
+
+		<script type="text/javascript" src="src/js/jquery.airport-1.1.source.js"></script>
+
+		<script type="text/javascript" language="javascript" src="lib/FlameViewportScale.js"></script>
+
+		<script type="text/javascript" language="javascript" src="src/js/jquery.tosrus.min.all.js"></script>
+		<link type="text/css" media="all" rel="stylesheet" href="src/css/jquery.tosrus.all.css" />
+
+		<script type="text/javascript" language="javascript">
+
+			jQuery(function( $ ) {
+
+				$('#example-1 a').tosrus({
+					buttons : false,
+					infinite   : false,
+					 caption    : {
+					  add        : true
+				   },
+					pagination	: {
+						add			: false
+					},
+					slides		: {
+						visible		: 1
+					}					
+				});
+				$(".thumbs tr td div").click(function(){
+					var $this = $(this);
+					$this.parent().text("");
+					
+				});
+				/**/
+				$("#example-1 img").mouseover(function(){
+					$(this).animate({ width: "-=3px",height:"-=3px" }, "fast" );
+					$(this).animate({ width: "+=3px",height:"+=3px" }, "fast" );
+				});
+				
+				$("#example-1 img").click(function() {
+					var $this = $(this);
+					$this.addClass("tdborder");
+				});
+				$("#div2").click(function() {
+					$('#wrapper1').css('background-image', 'url(image/ParticleSmoke.png)');
+				});
+				$("#start").click(function() {
+					//$("#wrapper1").show();
+				});
+				//$("#wrapper1").hide();
+				//$("#start").airport([ 'KEY HUNT', 'key hunt', 'KEY HUNT' ]);
+
+				function disableF5(e) { if ((e.which || e.keyCode) == 116) e.preventDefault(); };
+				$(document).on("keydown", disableF5);				
+				});
+
+				$(document).bind('contextmenu', function (e) {
+				e.preventDefault();
+				});			
+				
+				/*
+				var timerID;
+				$("#example-1 img").mouseover(function() {
+				var $this = $(this);
+					timerID = setInterval(function() {
+						$(this).animate({ width: "-=3px",height:"-=3px" }, "fast" );
+						$(this).animate({ width: "+=3px",height:"+=3px" }, "fast" );
+					}, 1000);
+				}, function() {
+				clearInterval(timerID);
+				});
+				*/
+		</script>
+
+		<style type="text/css" media="all">
+
+		body, div, p {
+			font-family: Arial, Helvetica, Verdana;
+		}
+		body{
+			background-color:#000044;
+			background:url(image/bg_window.jpg) repeat-x;
+			background-size: 1366px 786px;
+			margin:0px;
+			overflow:hidden;	
+		}
+		#main {
+			margin:30px 325px;
+		}
+		#wrapper1 {
+			background-image: url("https://www.biography.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cg_face%2Cq_auto:good%2Cw_300/MTE5NTU2MzE2NDgzNTIwMDEx/larry-page-12103347-1-402.jpg");
+			background-repeat: no-repeat;
+			width:700px;
+			background-size: 700px 700px;
+			border: 2px solid white;
+		}
+		.thumbs tr td div {
+			cursor: pointer;
+		}
+
+		.thumbs img
+		{
+			width: 130px;
+			height: 130px;
+		}
+		a:hover, a:visited, a:link, a:active
+		{
+			text-decoration: none;
+		}
+		.hidden {
+			display: none;
+		}
+		.thumbs tr td {
+			width: 130px;
+			height: 130px;
+		}
+		.tdborder {
+			border: 2px dotted red;
+		}
+		.thumbs div {
+			color: red;
+			margin: 5px 5px;
+		}
+		.thumbs #number {
+			color: white;
+			margin: 5px 55px;
+		}
+		#start {
+			font-size: 40px;
+			color: white;
+		}
+		.thumbs a {
+			font-size: 40px;
+		}
+		</style>
+	</head>
+	<body>
+			<script type="text/javascript" src="src/js/raphael-min.js"></script>
+
+		<script type="text/javascript" src="src/js/rain.js"></script>
+
+  <script>
+    new Rain('canvas', {
+      speed: 500, 
+      angle: 20, 
+      intensity: 5, 
+      size: 10,
+      color: '#fff'
+    });
+  </script>
+
+		<span id="div2" style="position:absolute;cursor: pointer;">X</span>
+
+		<div id="main">
+		<div id="wrapper1" style="position: relative;">
+				<table width="100%" height="100%" id="example-1" class="thumbs">
+					<tr>
+						<td>
+						<div id="div1" style="position:absolute;">X</div>
+						<div id="number" style="position:absolute;">1</div>
+							<a href="image/sports/Womens-athlete.jpg" title="Find the personalities???">
+								<img src="image/category/sports.jpg" />
+							</a>
+						</td>
+						<td>
+						<div id="div2" style="position:absolute;">X</div>
+						<div id="number" style="position:absolute;">2</div>
+							<a href="image/cartoon/shaggy-daphne-scooby-scrappy.png" title="What's her name???">
+								<img src="image/category/cartoon.jpg" /></a>
+						</td>
+						<td>
+							<div id="div2" style="position:absolute;">X</div>
+							<div id="number" style="position:absolute;">3</div>
+							<a href="image/cinema/chandraleka_1948.jpg" title="Movie name? If possible some more information about the movie">
+								<img src="image/category/cinema.jpg" />
+						</td>
+						<td>
+							<div id="div2" style="position:absolute;">X</div>
+							<div id="number" style="position:absolute;">4</div>
+							<a href="image/coding/java_131.JPG" title="Output???">
+								<img src="image/category/coding.jpg" />
+						</td>	
+						<td>
+							<div id="div2" style="position:absolute;">X</div>
+							<div id="number" style="position:absolute;">5</div>
+							<a href="image/techy/ferrite_bead.jpg" title="What is this???">
+								<img src="image/category/techy.jpg" />
+						</td>							
+					</tr>
+					<tr>
+						<td>
+						<div id="div1" style="position:absolute;">X</div>
+						<div id="number" style="position:absolute;">6</div>
+							<a href="image/history/keezhadi.jpg" title="Where???">
+								<img src="image/category/history.jpg" />
+							</a>
+						</td>
+						<td>
+						<div id="div2" style="position:absolute;">X</div>
+						<div id="number" style="position:absolute;">7</div>
+							<a href="image/techy/mongo_db_logo.png" title="Logo of which software">
+								<img src="image/category/techy.jpg" />
+						</td>
+						<td>
+							<div id="div2" style="position:absolute;">X</div>
+							<div id="number" style="position:absolute;">8</div>
+							<a href="image/politics/Palaniswami.jpg" title="What was this event???">
+								<img src="image/category/politics.jpg" />
+						</td>
+						<td>
+							<div id="div2" style="position:absolute;">X</div>
+							<div id="number" style="position:absolute;">9</div>
+							<a href="image/sports/djokovic.jpg" title="Guess who's he???">
+								<img src="image/category/sports.jpg" />
+						</td>	
+						<td>
+							<div id="div2" style="position:absolute;">X</div>
+							<div id="number" style="position:absolute;">10</div>
+							<a href="image/math/geomentry.jpg" title="Find the angle???">
+								<img src="image/category/math.jpg" />
+						</td>							
+					</tr>
+					<tr>
+						<td>
+						<div id="div1" style="position:absolute;">X</div>
+						<div id="number" style="position:absolute;">11</div>
+							<a href="image/cinema/invictus_movie.jpg" title="Guess the movie???">
+								<img src="image/category/cinema.jpg" />
+							</a>
+						</td>
+						<td>
+						<div id="div2" style="position:absolute;">X</div>
+						<div id="number" style="position:absolute;">12</div>
+							<a href="image/sports/Sreejesh_P_R.jpg" title="Who is this sports personality???">
+								<img src="image/category/sports.jpg" />
+						</td>
+						<td>
+							<div id="div2" style="position:absolute;">X</div>
+							<div id="number" style="position:absolute;">13</div>
+							<a href="image/travel/hampi_puskarni_well.jpg" title="Where???">
+								<img src="image/category/travel.jpg" />
+						</td>
+						<td>
+							<div id="div2" style="position:absolute;">X</div>
+							<div id="number" style="position:absolute;">14</div>
+							<a href="image/cinema/meryl_streep_Iron_Lady_2016.jpg" title="What was the relationship between these two personalities???">
+								<img src="image/category/cinema.jpg" />
+						</td>	
+						<td>
+							<div id="div2" style="position:absolute;">X</div>
+							<div id="number" style="position:absolute;">15</div>
+							<a href="image/history/madras.jpg" title="Map refers to???">
+								<img src="image/category/history.jpg" />
+						</td>							
+					</tr>
+					<tr>
+						<td>
+						<div id="div1" style="position:absolute;">X</div>
+						<div id="number" style="position:absolute;">16</div>
+							<a href="image/politics/subramaniya_jaishankar.JPG" title="Who am I???">
+								<img src="image/category/politics.jpg" />
+							</a>
+						</td>
+						<td>
+						<div id="div2" style="position:absolute;">X</div>
+						<div id="number" style="position:absolute;">17</div>
+							<a href="image/history/odd_man_out_gabon.png" title="Odd man out???">
+								<img src="image/category/history.jpg" />
+						</td>
+						<td>
+							<div id="div2" style="position:absolute;">X</div>
+							<div id="number" style="position:absolute;">18</div>
+							<a href="image/techy/bandwidth_of_4Gand5G.png" title="What was this scale refers to???">
+								<img src="image/category/techy.jpg" />
+						</td>
+						<td>
+							<div id="div2" style="position:absolute;">X</div>
+							<div id="number" style="position:absolute;">19</div>
+							<a href="image/sports/bocce_ball.jpg" title="What's name of this game???">
+								<img src="image/category/sports.jpg" />
+						</td>	
+						<td>
+							<div id="div2" style="position:absolute;">X</div>
+							<div id="number" style="position:absolute;">20</div>
+							<a href="image/travel/gallery-1426545898-antonov-an-225-front-view.jpg" title="What's My Name???">
+								<img src="image/category/travel.jpg" />
+						</td>							
+					</tr>
+					<tr>
+						<td>
+							<div id="div2" style="position:absolute;">X</div>
+							<div id="number" style="position:absolute;">21</div>
+							<a href="image/travel/delhi.JPG" title="What's My Name???">
+								<img src="image/category/travel.jpg" />
+						</td>
+						<td>
+						<div id="div2" style="position:absolute;">X</div>
+						<div id="number" style="position:absolute;">22</div>
+							<a href="image/coding/java_static_function_error.JPG" title="Output???">
+								<img src="image/category/coding.jpg" />
+						</td>
+						<td>
+							<div id="div2" style="position:absolute;">X</div>
+							<div id="number" style="position:absolute;">23</div>
+							<a href="image/math/area_of_cylinder_and_cone.png" title="What was these formulas???">
+								<img src="image/category/math.jpg" />
+						</td>
+						<td>
+							<div id="div2" style="position:absolute;">X</div>
+							<div id="number" style="position:absolute;">24</div>
+							<a href="image/cartoon/woody.JPG" title="What's my name and my owners name???">
+								<img src="image/category/cartoon.jpg" />
+						</td>	
+							
+						
+						<td>
+							<div id="div1" style="position:absolute;">X</div>
+							<div id="number" style="position:absolute;">25</div>
+								<a href="image/cinema/connection.jpg" title="What was the connection between these two pics???">
+									<img src="image/category/cinema.jpg" />
+								</a>
+							</td>
+
+					</tr>					
+				</table>
+		</div>
+		</div>
+
+	</body>
+
+</html>
